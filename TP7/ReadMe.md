@@ -24,3 +24,6 @@ In this lab we'll be making a web application.
 ## Problems !
 * need a way to manage assets in flask.
 * need a way to compile scss into some css folder and use the previous asset management to use the compiled file.
+
+**NOTES**
+* Current templates were copied and modified from online sources.
