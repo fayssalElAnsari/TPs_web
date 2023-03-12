@@ -1,7 +1,22 @@
 from flask import Flask, send_from_directory
-from flask_restful import Resource, Api
+from flask_restful import Api
+from flask_assets import Environment, Bundle #assets
 
 app = Flask(__name__)
+
+# assets
+assets = Environment(app)
+bundles = {  # define nested Bundle
+  'example_style': Bundle(
+            'SCSS/index.scss',
+            filters='pyscss',
+            output='Gen/index.css',
+  )
+}
+assets.register(bundles)
+assets.init_app(app)
+
+# API
 api = Api(app)
 
 @app.route('/')
